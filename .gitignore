@@ -19,3 +19,18 @@
 *.exe
 *.out
 *.app
+
+# there are two bins here because apparently Silverlight calls the folder Bin instead of bin
+# these folders should never be checked in as this contains the compiled code for configurations 
+bin
+Bin
+bin/*
+Bin/* 
+obj
+Obj
+
+# Misc
+*.suo
+*.cache
+*.user
+*.manifest
