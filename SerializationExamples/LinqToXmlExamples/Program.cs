@@ -38,9 +38,19 @@ namespace LinqToXmlExamples
                     Console.WriteLine("{0}:{1}", item.Name, item.Value);
                 }
 
+                Console.WriteLine(session.Elements("session").Count());
                 Console.ReadLine();
 
-                if (session.Elements("session") != null) GetInputsForMetering(session.Elements("session"));
+                if (session.Elements("session").Count() != 0 )
+                {
+                    GetInputsForMetering(session.Elements("session"));
+                }
+                else { 
+                    Console.WriteLine("No nested sessions");
+                    Console.ReadLine();
+                }
+
+
             }
             }
         }

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Usages>
+    <Usage Pattern="OrderCookies.xml" FirstUsageDate="12/3/2013" LastUsageDate="12/3/2014" Count="20" Increment="12">
+		<Params>
+			<Param type="Id">Payer</Param>
+			<Param type="unique">OrderTime</Param>
+		</Params>
+    </Usage>
+	
+	<Usage Pattern="OrderCookies111.xml" FirstUsageDate="" LastUsageDate="12/3/2014" Count="200" Increment="12">
+		<Params>
+			<Param>test</Param>
+			<Param>test1</Param>
+		</Params>
+    </Usage>
+</Usages>
+

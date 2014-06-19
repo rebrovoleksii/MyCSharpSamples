@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xmlconfig>
+  <session>
+    <ServiceName>cookies.com/OrderCookies</ServiceName>
+    <inputs>
+      <Payer>13464500</Payer>
+      <NumCookies ptype="INTEGER">12</NumCookies>
+      <CookieType>chocolatechip</CookieType>
+      <Toppings>MandMs</Toppings>
+      <OrderTime ptype="DATETIME">2d3b8235-339b-42d8-a02f-758e120fa8b3</OrderTime>
+    </inputs>
+  </session>
+  <session>
+    <ServiceName>cookies.com/OrderCookies111</ServiceName>
+    <inputs>
+      <Payer>13464500</Payer>
+      <NumCookies ptype="INTEGER">12</NumCookies>
+      <CookieType>chocolatechip</CookieType>
+      <Toppings>MandMs</Toppings>
+      <OrderTime ptype="DATETIME">aa11feaf-8958-4f3c-9ad0-997e0cdf2284</OrderTime>
+    </inputs>
+  </session>
+</xmlconfig>
