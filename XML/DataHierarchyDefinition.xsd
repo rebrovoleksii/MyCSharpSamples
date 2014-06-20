@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataHierarchyDefinition"
+    targetNamespace="http://tempuri.org/DataHierarchyDefinition.xsd"
+    elementFormDefault="qualified"
+    xmlns="http://tempuri.org/DataHierarchyDefinition.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+
+  <xs:element name="Root" type="root"></xs:element>
+    
+    <xs:complexType name="root">
+      <xs:sequence maxOccurs="unbounded">
+        <xs:element name="AccountTemplate" type="acctemplate"/>
+      </xs:sequence>
+    </xs:complexType>
+
+ 
+  <xs:complexType name="acctemplate">
+      <xs:choice maxOccurs="unbounded">
+        <xs:element name="ChildAccounts" type="root"/>
+        <xs:element name="Subscriptions" type="subscription"/>
+        <xs:element name="Usages" type="usage"/>
+      </xs:choice>
+      <xs:attribute name="File" type="xs:string"/>
+      <xs:attribute name="Count" type="xs:int"/>
+      <xs:attribute name="Mark" type="xs:string"/>
+    </xs:complexType>
+
+  <xs:complexType name="subscription">
+    <xs:sequence maxOccurs="unbounded">
+      <xs:element name="Subscription">
+        <xs:complexType>
+          <xs:all>
+            <xs:element name="StartDate" type="xs:date"/>
+            <xs:element name="EndDate" type="xs:date"/>
+          </xs:all>
+          <xs:attribute name="PoName" type="xs:string"/>
+          <xs:attribute name="PoId" type="xs:int"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+
+  </xs:complexType>
+
+  <xs:complexType name="usage">
+    <xs:sequence maxOccurs="unbounded">
+      <xs:element name="Usage">
+        <xs:complexType>
+          <xs:all>
+            <xs:element name="FirstUsageDate" type="xs:date"/>
+            <xs:element name="LastUsageDate" type="xs:date"/>
+            <xs:element name="Parameters" type="parameter"/>
+          </xs:all>
+          <xs:attribute name="Pattern" type="xs:string"/>
+          <xs:attribute name="Count" type="xs:int"/>
+          <xs:attribute name="Increment" type="xs:int"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="parameter">
+    <xs:sequence maxOccurs="unbounded">
+       <xs:element name="Parameter" >
+       <xs:complexType mixed="true">
+         <xs:attribute name="type" use="required">
+           <xs:simpleType>
+             <xs:restriction base="xs:string">
+               <xs:enumeration value="Id"/>
+               <xs:enumeration value="UserName"/>
+               <xs:enumeration value="Date"/>
+               <xs:enumeration value="Unique"/>
+             </xs:restriction>
+           </xs:simpleType>
+         </xs:attribute>
+         <xs:attribute name="format"/>
+      </xs:complexType>
+     </xs:element>
+    </xs:sequence>
+   </xs:complexType>
+
+
+  
+  
+  
+</xs:schema>

@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Root xmlns="http://tempuri.org/DataHierarchyDefinition.xsd" >
+  <AccountTemplate File="CorporateAccountTemplate.xml" Count="1" Mark='M'>
+    <ChildAccounts>
+      <AccountTemplate File="DepartmentAccountTemplate.xml" Mark='A' Count="3">
+        <ChildAccounts>
+          <AccountTemplate File="CoreSubscriberAccountTemplate.xml" Count="2">
+            <Subscriptions>
+              <Subscription PoId="342" PoName="GROUP_USAGE_Simple_PO">
+                <StartDate >2014-06-17</StartDate>
+                <EndDate >2016-12-12</EndDate>
+              </Subscription>
+              <Subscription PoId="364" PoName="Localized Audio Conference Product Offering USD">
+                <StartDate >2014-06-17</StartDate>
+                <EndDate >2016-12-12</EndDate>
+              </Subscription>
+            </Subscriptions>
+          </AccountTemplate>
+        </ChildAccounts>
+      </AccountTemplate>
+      <AccountTemplate File="DepartmentAccountTemplate.xml" Mark='B' Count="3">
+        <Subscriptions>
+          <Subscription PoId="342" PoName="GROUP_USAGE_Simple_PO">
+            <StartDate >2014-06-17</StartDate>
+            <EndDate >2016-12-12</EndDate>
+          </Subscription>
+          <Subscription PoId="364" PoName="Localized Audio Conference Product Offering USD">
+            <StartDate >2014-06-17</StartDate>
+            <EndDate >2016-12-12</EndDate>
+          </Subscription>
+        </Subscriptions>
+      </AccountTemplate>
+      <AccountTemplate File="CoreSubscriberAccountTemplate.xml" Count="2">
+        <Subscriptions>
+          <Subscription PoId="342">
+            <StartDate >2014-06-17</StartDate>
+            <EndDate >2016-12-12</EndDate>
+          </Subscription>
+          <Subscription PoId="364">
+            <StartDate >2014-06-17</StartDate>
+            <EndDate >2016-12-12</EndDate>
+          </Subscription>
+        </Subscriptions>
+      </AccountTemplate>
+    </ChildAccounts>
+    <Subscriptions>
+      <Subscription PoName="GROUP_USAGE_Simple_PO">
+        <StartDate >2014-06-17</StartDate>
+        <EndDate >2016-12-12</EndDate>
+      </Subscription>
+      <Subscription PoName="Localized Audio Conference Product Offering USD">
+        <StartDate >2014-06-17</StartDate>
+        <EndDate >2016-12-12</EndDate>
+      </Subscription>
+    </Subscriptions>
+    <Usages>
+      <Usage Pattern="d:\CoreQA\Source\MTShellTestFramework\Tool\Data\cookies.xml" Count="2">
+        <FirstUsageDate>2014-06-17</FirstUsageDate>
+        <LastUsageDate>2014-11-10</LastUsageDate>
+        <Parameters>
+          <Parameter type="Id">ada</Parameter>
+        </Parameters>
+      </Usage>
+      <Usage Pattern="d:\CoreQA\Source\MTShellTestFramework\Tool\Data\AudioConf.xml" Count="10" Increment="12">
+        <FirstUsageDate>2014-06-17</FirstUsageDate>
+        <LastUsageDate>2014-06-17</LastUsageDate>
+        <Parameters>
+          <Parameter type="Unique">ConferenceID</Parameter>
+          <Parameter type="Unique">ConferenceName</Parameter>
+          <Parameter type="Unique">ConferenceSubject</Parameter>
+          <Parameter type="UserName">Payer</Parameter>
+          <Parameter type="Date" format="">ScheduledStartTime</Parameter>
+          <Parameter type="Date" format="">CancellationTime</Parameter>
+        </Parameters>
+      </Usage>
+    </Usages>
+  </AccountTemplate>
+</Root>
+
+
+
