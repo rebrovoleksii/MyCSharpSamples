@@ -9,6 +9,10 @@ namespace TheArtOfUnitTesting
     {
         public bool IsValidLogFileName(string fileName)
         {
+            if (string.IsNullOrEmpty(fileName))
+            {
+                throw new ArgumentException("No filenameprovided!");
+            }
             if (!fileName.ToLower().EndsWith(".slf"))
             {
                 return false;

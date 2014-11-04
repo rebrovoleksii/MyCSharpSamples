@@ -9,12 +9,47 @@ namespace TheArtOfUnitTesting
     [TestFixture]
     class LogAnalyzerTest
     {
-        [Test]
-        public void IsValidFileName_validFile_ReturnsTrue()
+        private LogAnalyzer m_analyzer;
+
+        [SetUp]
+        public void Setup()
         {
-            var logAnalyzer = new LogAnalyzer();
-            var res = logAnalyzer.IsValidLogFileName("firsttest.SLF");
+            m_analyzer = new LogAnalyzer();
+        }
+
+        [Test]
+        public void IsValidFileName_validFileLowerCase_ReturnsTrue()
+        {
+            var res = m_analyzer.IsValidLogFileName("firsttest.slf");
             Assert.IsTrue(res,"file name should be valid");
+        }
+        
+        [Test]
+        public void IsValidFileName_validFileUpperCase_ReturnsTrue()
+        {
+            var res = m_analyzer.IsValidLogFileName("firsttest.SLF");
+            Assert.IsTrue(res, "file name should be valid");
+        }
+
+        [Category("Fast Test")]
+        [ExpectedException(typeof(ArgumentException),ExpectedMessage="No filenameprovided!")]
+        [Test]
+        public void ArgumentExceptionTest()
+        {
+            m_analyzer.IsValidLogFileName(String.Empty);
+        }
+
+        [Ignore("that's example of ignored test")]
+        [Test]
+        public void IgnoredTest()
+        {
+            return;
+        }
+
+        [TearDown]
+        public void CleanUp()
+        {
+            m_analyzer = null;
         }
     }
 }
