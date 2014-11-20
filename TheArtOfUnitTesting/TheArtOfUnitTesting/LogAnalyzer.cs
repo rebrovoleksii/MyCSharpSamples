@@ -7,17 +7,25 @@ namespace TheArtOfUnitTesting
 {
     class LogAnalyzer
     {
+        private IExtensionManager manager;
+
+        public LogAnalyzer()
+        {
+            manager = new FileExtensionManager();
+        }
+
+        public LogAnalyzer(IExtensionManager mgr)
+        {
+            manager = mgr;
+        }
+        
         public bool IsValidLogFileName(string fileName)
         {
             if (string.IsNullOrEmpty(fileName))
             {
                 throw new ArgumentException("No filenameprovided!");
             }
-            if (!fileName.ToLower().EndsWith(".slf"))
-            {
-                return false;
-            }
-            return true;
+            return manager.isValid(fileName);
         }
-    }
+     }
 }

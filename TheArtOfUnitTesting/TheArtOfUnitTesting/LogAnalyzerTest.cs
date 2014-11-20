@@ -46,6 +46,17 @@ namespace TheArtOfUnitTesting
             return;
         }
 
+        [Test]
+        public void IsValidLogFileName_UsingStub()
+        {
+            var fakeManager = new StubExtensionManager();
+            fakeManager.ShouldExtensionBeValid = true;
+
+            m_analyzer = new LogAnalyzer(fakeManager);
+            bool result =  m_analyzer.IsValidLogFileName("test.tat");
+            Assert.IsTrue(result);
+         }
+
         [TearDown]
         public void CleanUp()
         {
