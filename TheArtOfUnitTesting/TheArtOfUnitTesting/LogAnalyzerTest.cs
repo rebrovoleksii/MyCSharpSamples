@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using NUnit.Framework;
+using TheArtOfUnitTesting.IndirectionLayer;
 
 namespace TheArtOfUnitTesting
 {
@@ -47,7 +48,7 @@ namespace TheArtOfUnitTesting
         }
 
         [Test]
-        public void IsValidLogFileName_UsingStub()
+        public void IsValidLogFileName_UsingStubConstructor()
         {
             var fakeManager = new StubExtensionManager();
             fakeManager.ShouldExtensionBeValid = true;
@@ -56,6 +57,36 @@ namespace TheArtOfUnitTesting
             bool result =  m_analyzer.IsValidLogFileName("test.tat");
             Assert.IsTrue(result);
          }
+
+        [Test]
+        public void IsValidLogFileName_UsingStubProperty()
+        {
+            var fakeManager = new StubExtensionManager();
+            fakeManager.ShouldExtensionBeValid = true;
+
+            m_analyzer = new LogAnalyzer();
+            //set manager to use stub using Property
+            m_analyzer.ExtensionManager = fakeManager;
+
+            bool result = m_analyzer.IsValidLogFileName("test.tat");
+            Assert.IsTrue(result);
+        }
+
+
+        [Test]
+        public void IsValidLogFileName_UsingFactoryClass()
+        {
+            var fakeManager = new StubExtensionManager();
+            fakeManager.ShouldExtensionBeValid = true;
+
+            //configuring factory before creating required object
+            ExtenstionManagerFactory.SetManager(fakeManager);
+
+            m_analyzer = new LogAnalyzer();
+           
+            bool result = m_analyzer.IsValidLogFileName("test.tat");
+            Assert.IsTrue(result);
+        }
 
         [TearDown]
         public void CleanUp()
