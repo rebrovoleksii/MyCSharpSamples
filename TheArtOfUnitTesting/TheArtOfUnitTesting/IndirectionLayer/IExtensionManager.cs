@@ -5,7 +5,7 @@ using System.Text;
 
 namespace TheArtOfUnitTesting
 {
-    interface IExtensionManager
+    public interface IExtensionManager
     {
         bool isValid(string fileName);
     }

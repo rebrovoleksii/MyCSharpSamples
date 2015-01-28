@@ -5,7 +5,7 @@ using System.Text;
 
 namespace TheArtOfUnitTesting.IndirectionLayer
 {
-    class ExtenstionManagerFactory
+    public class ExtenstionManagerFactory
     {
         private static IExtensionManager customManager;
 

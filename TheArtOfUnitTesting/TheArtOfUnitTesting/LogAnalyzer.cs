@@ -6,7 +6,7 @@ using TheArtOfUnitTesting.IndirectionLayer;
 
 namespace TheArtOfUnitTesting
 {
-    class LogAnalyzer
+    public class LogAnalyzer
     {
         #region Fields and Props
        

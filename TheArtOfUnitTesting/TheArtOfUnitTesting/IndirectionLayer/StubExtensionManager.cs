@@ -5,7 +5,7 @@ using System.Text;
 
 namespace TheArtOfUnitTesting
 {
-    class StubExtensionManager : IExtensionManager
+    public class StubExtensionManager : IExtensionManager
     {
         public bool ShouldExtensionBeValid;
 
