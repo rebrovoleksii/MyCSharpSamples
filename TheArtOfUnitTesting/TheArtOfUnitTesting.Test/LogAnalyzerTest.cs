@@ -89,6 +89,17 @@ namespace TheArtOfUnitTesting.Test
             Assert.IsTrue(result);
         }
 
+       [TestMethod]
+       public void Analyze_LogsError_WhenFileNameShorterThan8Chars()
+       {
+           var serviceStub = new WebServiceStub();
+           var log = new LogAnalyzer(serviceStub);
+           var filename = "abc.txt";
+           log.Analyze(filename);
+           Assert.AreEqual("Following file name is too short - "+filename,serviceStub.lastError);
+
+       }
+
         [TestCleanup]
         public void CleanUp()
         {

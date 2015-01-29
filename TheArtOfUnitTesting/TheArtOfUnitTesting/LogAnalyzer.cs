@@ -11,6 +11,7 @@ namespace TheArtOfUnitTesting
         #region Fields and Props
        
         private IExtensionManager manager;
+        private IWebService service;
 
         //property dependency injection
         public IExtensionManager ExtensionManager 
@@ -28,11 +29,18 @@ namespace TheArtOfUnitTesting
             manager = ExtenstionManagerFactory.Create();
         }
 
-        // constructoer level injection
+        // constructor level injection
         public LogAnalyzer(IExtensionManager mgr)
         {
             manager = mgr;
         }
+
+        // constructor with service
+        public LogAnalyzer(IWebService service)
+        {
+            this.service = service;
+        }
+
         #endregion
 
         public bool IsValidLogFileName(string fileName)
@@ -42,6 +50,13 @@ namespace TheArtOfUnitTesting
                 throw new ArgumentException("No filenameprovided!");
             }
             return manager.isValid(fileName);
+        }
+
+        public void Analyze(string fileName)
+        {
+            if (fileName.Length < 8){
+                service.LogError("Following file name is too short - " + fileName);
+            }
         }
      }
 }
