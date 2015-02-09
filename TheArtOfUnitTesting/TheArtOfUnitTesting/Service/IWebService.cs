@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace TheArtOfUnitTesting
+namespace TheArtOfUnitTesting.Service
 {
     public interface IWebService
     {

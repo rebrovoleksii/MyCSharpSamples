@@ -68,6 +68,8 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="IndirectionLayer\StubExtensionManager.cs" />
+    <Compile Include="Service\EmailServiceStub.cs" />
+    <Compile Include="Service\IEmailService.cs" />
     <Compile Include="Service\IWebService.cs" />
     <Compile Include="Service\WebServiceStub.cs" />
   </ItemGroup>

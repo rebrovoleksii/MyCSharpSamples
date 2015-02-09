@@ -4,7 +4,9 @@ using System.Linq;
 using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TheArtOfUnitTesting.IndirectionLayer;
+using TheArtOfUnitTesting.Service;
 using TheArtOfUnitTesting;
+
 
 namespace TheArtOfUnitTesting.Test
 {
@@ -90,7 +92,7 @@ namespace TheArtOfUnitTesting.Test
         }
 
        [TestMethod]
-       public void Analyze_LogsError_WhenFileNameShorterThan8Chars()
+       public void Analyze_LogsError_IfFileNameShorterThan8Chars()
        {
            var serviceStub = new WebServiceStub();
            var log = new LogAnalyzer(serviceStub);
@@ -99,6 +101,19 @@ namespace TheArtOfUnitTesting.Test
            Assert.AreEqual("Following file name is too short - "+filename,serviceStub.lastError);
 
        }
+
+       [TestMethod]
+       public void Analyze_SendEmail_WhenExceptionOccursOnLogging()
+       {
+           var emailStub = new EmailServiceStub();
+           var webStub = new WebServiceWithExceptionStub();
+           var log = new LogAnalyzer(webStub, emailStub);
+           var filename = "test"; 
+           log.Analyze(filename);
+           Assert.IsTrue(emailStub.ValidateSendMail("Admin", "ErrorLogged", "exception"));
+
+       }
+
 
         [TestCleanup]
         public void CleanUp()

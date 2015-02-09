@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using TheArtOfUnitTesting.IndirectionLayer;
+using TheArtOfUnitTesting.Service;
 
 namespace TheArtOfUnitTesting
 {
@@ -12,6 +13,7 @@ namespace TheArtOfUnitTesting
        
         private IExtensionManager manager;
         private IWebService service;
+        private IEmailService email;
 
         //property dependency injection
         public IExtensionManager ExtensionManager 
@@ -36,9 +38,10 @@ namespace TheArtOfUnitTesting
         }
 
         // constructor with service
-        public LogAnalyzer(IWebService service)
+        public LogAnalyzer(IWebService service = null,IEmailService email=null)
         {
             this.service = service;
+            this.email = email;
         }
 
         #endregion
@@ -55,8 +58,15 @@ namespace TheArtOfUnitTesting
         public void Analyze(string fileName)
         {
             if (fileName.Length < 8){
-                service.LogError("Following file name is too short - " + fileName);
+                try {
+                    service.LogError("Following file name is too short - " + fileName);
+                }
+                catch (Exception e) {
+                    email.SendMail("Admin","ErrorLogged",e.Message);
+                }
+                    
             }
+
         }
      }
 }
