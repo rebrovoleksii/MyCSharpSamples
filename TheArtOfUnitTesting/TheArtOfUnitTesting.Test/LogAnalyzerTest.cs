@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Rhino.Mocks;
 using TheArtOfUnitTesting.IndirectionLayer;
 using TheArtOfUnitTesting.Service;
 using TheArtOfUnitTesting;
@@ -114,7 +115,44 @@ namespace TheArtOfUnitTesting.Test
 
        }
 
+       [TestMethod]
+       public void Analyze_TooShortFileName_ErrorLoggedTpServiceWithStrickMock()
+       {
+           var mocks = new MockRepository();
+           IWebService mockService = mocks.StrictMock<IWebService>();
 
+           using (mocks.Record())
+           {
+               mockService.LogError("Following file name is too short - abc.txt");
+           }
+
+           var log = new LogAnalyzer(mockService);
+           string shortFileName = "abc.txt";
+           log.Analyze(shortFileName);
+
+           mocks.Verify(mockService);
+
+       }
+
+       [TestMethod]
+       public void Analyze_TooShortFileName_ErrorLoggedTpServiceWithNonStrickMock()
+       {
+           var mocks = new MockRepository();
+           IWebService mockService = mocks.DynamicMock<IWebService>();
+
+           using (mocks.Record())
+           {
+               mockService.LogError("Invalid expectation");
+           }
+
+           var log = new LogAnalyzer(mockService);
+           string shortFileName = "abc.txt";
+           log.Analyze(shortFileName);
+
+           mocks.Verify(mockService);
+
+       }
+        
         [TestCleanup]
         public void CleanUp()
         {

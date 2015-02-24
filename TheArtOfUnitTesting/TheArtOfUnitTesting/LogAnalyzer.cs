@@ -69,4 +69,24 @@ namespace TheArtOfUnitTesting
 
         }
      }
+
+    #region Classes for example with event
+
+    public class IView { public event EventHandler Load;}
+
+    public class Presenter
+    {
+        IView view;
+
+        public Presenter(IView view)
+        {
+            this.view = view;
+            this.view.Load += new EventHandler(view_Load);
+        }
+
+        void view_Load(object sender, EventArgs e)
+        { throw new NotImplementedException(); }
+    }
+
+    #endregion Classes for example with event
 }
