@@ -10,16 +10,16 @@ namespace TheArtOfUnitTesting
     public class LogAnalyzer
     {
         #region Fields and Props
-       
+
         private IExtensionManager manager;
         private IWebService service;
         private IEmailService email;
 
         //property dependency injection
-        public IExtensionManager ExtensionManager 
+        public IExtensionManager ExtensionManager
         {
             get { return manager; }
-            set { manager = value; } 
+            set { manager = value; }
         }
 
         #endregion Fields and Props
@@ -38,7 +38,7 @@ namespace TheArtOfUnitTesting
         }
 
         // constructor with service
-        public LogAnalyzer(IWebService service = null,IEmailService email=null)
+        public LogAnalyzer(IWebService service = null, IEmailService email = null)
         {
             this.service = service;
             this.email = email;
@@ -57,36 +57,19 @@ namespace TheArtOfUnitTesting
 
         public void Analyze(string fileName)
         {
-            if (fileName.Length < 8){
-                try {
+            if (fileName.Length < 8)
+            {
+                try
+                {
                     service.LogError("Following file name is too short - " + fileName);
                 }
-                catch (Exception e) {
-                    email.SendMail("Admin","ErrorLogged",e.Message);
+                catch (Exception e)
+                {
+                    email.SendMail("Admin", "ErrorLogged", e.Message);
                 }
-                    
+
             }
 
         }
-     }
-
-    #region Classes for example with event
-
-    public class IView { public event EventHandler Load;}
-
-    public class Presenter
-    {
-        IView view;
-
-        public Presenter(IView view)
-        {
-            this.view = view;
-            this.view.Load += new EventHandler(view_Load);
-        }
-
-        void view_Load(object sender, EventArgs e)
-        { throw new NotImplementedException(); }
     }
-
-    #endregion Classes for example with event
 }

@@ -68,6 +68,7 @@
     <Compile Include="IndirectionLayer\FileExtensionManager.cs" />
     <Compile Include="IndirectionLayer\IExtensionManager.cs" />
     <Compile Include="LogAnalyzer.cs" />
+    <Compile Include="Presenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="IndirectionLayer\StubExtensionManager.cs" />

@@ -152,9 +152,34 @@ namespace TheArtOfUnitTesting.Test
            mocks.Verify(mockService);
 
        }
+
+       [TestMethod]
+       public void TriggerAndVerifyViewEvents()
+       {
+           //ARRANGE
+           MockRepository mocks = new MockRepository();
+           IWebService serviceMock = mocks.StrictMock<IWebService>();
+           using (mocks.Record())
+           {
+               //here we specify expectation
+               //since we define handler for Load event
+               serviceMock.LogError(EventArgs.Empty.ToString());
+           }
+           var p = new Presenter(serviceMock);
+           p.Load += new EventHandler((object o, EventArgs arg) => {
+               serviceMock.LogError(arg.ToString());
+           }
+               );
+
+           //ACT
+           p.OnLoad(EventArgs.Empty);
         
-        [TestCleanup]
-        public void CleanUp()
+           //ASSERT
+           mocks.VerifyAll();
+       }
+ 
+       [TestCleanup]
+       public void CleanUp()
         {
             m_analyzer = null;
         }
