@@ -11,7 +11,7 @@ namespace DeserializationAndDynamicProperties
 {
     class Program
     {
-        static void Main()
+        static void test()
         {
             string filePath = Path.Combine(Environment.CurrentDirectory, @"C:\Users\Administrator\Desktop\DataHierarchyDefinition.xml");
 

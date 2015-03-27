@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{992A6877-284D-4776-AF1F-2AB9009161C9}</ProjectGuid>
+    <ProjectGuid>{80AF1880-2FC1-4000-B917-80039B9CBF70}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TypeConverstionAndDateFormats</RootNamespace>
-    <AssemblyName>TypeConverstionAndDateFormats</AssemblyName>
+    <RootNamespace>SystemDNC</RootNamespace>
+    <AssemblyName>SystemDNC</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>

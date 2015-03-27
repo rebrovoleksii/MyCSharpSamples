@@ -3,14 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace TypeConverstionAndDateFormats
+namespace BinaryTree
 {
-    class Program
+    class Programm
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(DateTime.Now.ToString("yyyy-MM-dd"));
-            Console.ReadLine();
         }
     }
 }

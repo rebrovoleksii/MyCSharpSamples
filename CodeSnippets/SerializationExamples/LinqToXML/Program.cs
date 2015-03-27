@@ -8,7 +8,7 @@ namespace LinqToXmlExamples
 {
     class Program
     {
-        static void Main(string[] args)
+        private static void GetInputsForMetering(IEnumerable<XElement> sessions)
         {
             string meteringPatternFilePath = @"C:\Users\Administrator\Desktop\cookies.xml";
 
@@ -19,11 +19,6 @@ namespace LinqToXmlExamples
 
             Program.GetInputsForMetering(sessionsFromFile);
 
-          
-        }
-
-        private static void GetInputsForMetering(IEnumerable<XElement> sessions)
-        {
             foreach (var session in sessions)
             {
 

@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("LinqToXmlExamples")]
+[assembly: AssemblyTitle("PlayWithStatics")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("home")]
-[assembly: AssemblyProduct("LinqToXmlExamples")]
+[assembly: AssemblyProduct("PlayWithStatics")]
 [assembly: AssemblyCopyright("Copyright © home 2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("ba42f92c-d98b-4cb8-8141-f0e0a3fb6773")]
+[assembly: Guid("d76cd2f7-6bd4-4b53-a4fc-d9eb31c28c83")]
 
 // Version information for an assembly consists of the following four values:
 //

@@ -49,7 +49,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Account.cs" />
+    <Compile Include="Deserialization\Program.cs" />
+    <Compile Include="LinqToXML\Program.cs" />
+    <Compile Include="Serialization\Account.cs" />
     <Compile Include="Test.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -80,12 +82,12 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Files\cookies.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\sample.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="NewFolder1\cookies.xml" />
+    <Content Include="NewFolder1\DataHierarchyDefinition.xml" />
+    <Content Include="NewFolder1\sample.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\DataHierarchyDefinition.xsd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
