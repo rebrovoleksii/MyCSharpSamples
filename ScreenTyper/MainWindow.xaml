@@ -1,0 +1,21 @@
+﻿<Window x:Class="ScreenTyper.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="500" Width="500"
+        Background="Black"        
+        >
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <TextBlock 
+    			Loaded="TextBlock_Loaded" 
+    			TextElement.FontSize="32" 
+    			TextElement.Foreground="Green" Height="407" Width="471"/>
+        </ScrollViewer>
+        <TextBox Background="Black" 
+    		KeyDown="OnEnterPressedHandler"
+    		TextElement.FontSize="32" 
+    		TextElement.Foreground="Green"             
+    		Margin="0,0,335,417"             />
+    </Grid>
+
+</Window>
