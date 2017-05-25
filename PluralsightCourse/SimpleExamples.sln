@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F8FCD0AD-AD34-4686-9556-0E479CB0DB84}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GradeBook", "GradeBook", "{5DDE678B-8404-4F7D-B88F-5DB57269E3EA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{43ED6823-F649-4D95-BD9D-C413CCF03457}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GradeBookConsole", "src\GradeBookConsole.csproj", "{DBF69038-FA48-4180-BE5A-1739AA5F1110}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GradeBookTests", "test\GradeBookTests\GradeBookTests.csproj", "{E4EC5647-FFE8-4A13-B573-CCEBB296C4F6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DBF69038-FA48-4180-BE5A-1739AA5F1110}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBF69038-FA48-4180-BE5A-1739AA5F1110}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBF69038-FA48-4180-BE5A-1739AA5F1110}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBF69038-FA48-4180-BE5A-1739AA5F1110}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4EC5647-FFE8-4A13-B573-CCEBB296C4F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4EC5647-FFE8-4A13-B573-CCEBB296C4F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4EC5647-FFE8-4A13-B573-CCEBB296C4F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4EC5647-FFE8-4A13-B573-CCEBB296C4F6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5DDE678B-8404-4F7D-B88F-5DB57269E3EA} = {F8FCD0AD-AD34-4686-9556-0E479CB0DB84}
+		{DBF69038-FA48-4180-BE5A-1739AA5F1110} = {5DDE678B-8404-4F7D-B88F-5DB57269E3EA}
+		{E4EC5647-FFE8-4A13-B573-CCEBB296C4F6} = {43ED6823-F649-4D95-BD9D-C413CCF03457}
+	EndGlobalSection
+EndGlobal
