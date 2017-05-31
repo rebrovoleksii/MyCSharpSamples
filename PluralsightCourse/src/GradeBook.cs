@@ -4,11 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PluralSight.GradeBookConsole
+namespace PluralSight.Grade
 {
     public class GradeBook
     {
         private List<float> grades;
+
+        public string Name;
 
         public GradeBook()
         {

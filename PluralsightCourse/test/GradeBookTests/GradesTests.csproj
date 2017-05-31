@@ -50,13 +50,14 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="GradeBookConsoleTest.cs" />
+    <Compile Include="GradeBookTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Types\ReferenceTypeTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\src\GradeBookConsole.csproj">
+    <ProjectReference Include="..\..\src\Grades.csproj">
       <Project>{dbf69038-fa48-4180-be5a-1739aa5f1110}</Project>
-      <Name>GradeBookConsole</Name>
+      <Name>Grades</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

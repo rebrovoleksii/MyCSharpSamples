@@ -7,9 +7,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GradeBook", "GradeBook", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{43ED6823-F649-4D95-BD9D-C413CCF03457}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GradeBookConsole", "src\GradeBookConsole.csproj", "{DBF69038-FA48-4180-BE5A-1739AA5F1110}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Grades", "src\Grades.csproj", "{DBF69038-FA48-4180-BE5A-1739AA5F1110}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GradeBookTests", "test\GradeBookTests\GradeBookTests.csproj", "{E4EC5647-FFE8-4A13-B573-CCEBB296C4F6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GradesTests", "test\GradeBookTests\GradesTests.csproj", "{E4EC5647-FFE8-4A13-B573-CCEBB296C4F6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

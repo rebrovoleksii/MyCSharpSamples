@@ -1,12 +1,12 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-using PluralSight.GradeBookConsole;
+using PluralSight.Grade;
 
-namespace GradeBookTests
+namespace Grades.Tests
 {
     [TestClass]
-    public class GradeBookConsoleTest
+    public class GradeBookTest
     {
         [TestMethod]
         public void CalculateLowestGrade()
