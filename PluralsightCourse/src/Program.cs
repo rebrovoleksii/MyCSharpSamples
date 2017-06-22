@@ -8,10 +8,20 @@ namespace PluralSight.Grade
 {
     public class Program
     {
-        static int Main(string[] args)
+        static void Main(string[] args)
         {
-            //...
-            return 0;
+            var book = new GradeBook("Pluralsight book");
+            book.OnNameChanged += new NameChagedDelegate(OnNameChanges);
+
+            book.OnNameChanged += new NameChagedDelegate(OnNameChanges);
+
+            book.Name = "Alex's Gradebook";
+            Console.ReadLine();
+        }
+
+        static void OnNameChanges(object sender, NameChangedEventArgs args)
+        {
+            Console.WriteLine("The name of the gradebook was changes from {0} to {1}", args.ExistingName, args.NewName);
         }
     }
 }

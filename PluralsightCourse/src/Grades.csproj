@@ -43,6 +43,8 @@
   <ItemGroup>
     <Compile Include="GradeBook.cs" />
     <Compile Include="GradeBookStatistics.cs" />
+    <Compile Include="NameChagedDelegate.cs" />
+    <Compile Include="NameChangedEventArgs.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

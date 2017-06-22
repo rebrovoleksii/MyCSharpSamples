@@ -9,11 +9,38 @@ namespace PluralSight.Grade
     public class GradeBook
     {
         private List<float> grades;
+        private string _name;
 
-        public string Name;
+        public string Name
+        {
+            get
+            {
+                return _name;
+            }
+            set
+            {
+                if (!String.IsNullOrEmpty(value))
+                {
+                    if (_name != value && OnNameChanged != null)
+                    {
+                        var args = new NameChangedEventArgs() { ExistingName = _name, NewName = value };
+                        OnNameChanged(this, args);
+                    }
+                    _name = value;
+                }
+            }
+        }
+
+        public event NameChagedDelegate OnNameChanged;
 
         public GradeBook()
         {
+            grades = new List<float>();
+        }
+
+        public GradeBook(string name)
+        {
+            this._name = name;
             grades = new List<float>();
         }
 

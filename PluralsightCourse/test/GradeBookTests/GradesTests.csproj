@@ -52,7 +52,9 @@
   <ItemGroup>
     <Compile Include="GradeBookTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Types\ReferenceTypeTest.cs" />
+    <Compile Include="Types\TypeTest.cs" />
+    <Compile Include="Types\ImmutableTest.cs" />
+    <Compile Include="Types\DelegateTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Grades.csproj">
