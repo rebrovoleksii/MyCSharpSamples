@@ -3,26 +3,11 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using PluralSight.Grade;
 
-namespace Grades.Tests.Types
+namespace PluralSight.Grade.Tests.Types
 {
     [TestClass]
     public class ReferenceTypeTest
-    {
-        [TestMethod]
-        public void StringComparisonTest()
-        {
-            string name1 = "Alex";
-            string name2 = "alex";
-
-            //enum
-            bool result = String.Equals(name1,name2,StringComparison.InvariantCultureIgnoreCase);
-            /*
-             * enum could not be replaced by associated int value 
-             * bool resultFalse = String.Equals(name1, name2, 3);  
-             */  
-            Assert.IsTrue(result);
-        }
-
+    {                                           
         [TestMethod]
         public void IntVarsHoldValue()
         {
@@ -161,7 +146,7 @@ namespace Grades.Tests.Types
 
         private void IncrementNumber(ref int number)
         {
-            //value is copied so original variale not affected
+            //reference is passed so original variale is updated
             number += 1;
         }
         #endregion  

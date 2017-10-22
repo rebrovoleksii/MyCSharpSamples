@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DBF69038-FA48-4180-BE5A-1739AA5F1110}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{DB98FFFA-E7A5-44BD-A724-CCD356189B7B}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PluralSight.Grade</RootNamespace>
-    <AssemblyName>GradesApp</AssemblyName>
+    <RootNamespace>EqualityAndComparison</RootNamespace>
+    <AssemblyName>EqualityAndComparison</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -41,13 +39,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GradeBook.cs" />
-    <Compile Include="GradeBookStatistics.cs" />
-    <Compile Include="NameChagedDelegate.cs" />
-    <Compile Include="NameChangedEventArgs.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="CookedFood.cs" />
+    <Compile Include="Food.cs" />
+    <Compile Include="FoodComparer.cs" />
+    <Compile Include="FoodStruct.cs" />
+    <Compile Include="FoodStructEqualityComparer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ThrowAwayGradeBook.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

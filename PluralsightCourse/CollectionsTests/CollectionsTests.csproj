@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E4EC5647-FFE8-4A13-B573-CCEBB296C4F6}</ProjectGuid>
+    <ProjectGuid>{81DDD82D-AF5C-4F9D-A86B-0BF5523180CB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>GradeBookTests</RootNamespace>
-    <AssemblyName>GradeBookTests</AssemblyName>
+    <RootNamespace>PluralSight.Tests.Collections</RootNamespace>
+    <AssemblyName>PluralSight.Tests.Collections</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -50,18 +50,23 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="GradeBookTest.cs" />
-    <Compile Include="OOP\VirtualMethodTest.cs" />
+    <Compile Include="BasicsTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Types\ReferenceVsValueTypeTest.cs" />
-    <Compile Include="Types\ImmutableTest.cs" />
-    <Compile Include="Types\DelegateTest.cs" />
-    <Compile Include="Types\EqualityTest.cs" />
+    <Compile Include="ListTest.cs" />
+    <Compile Include="LinkedListStackQueueTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Grades.csproj">
-      <Project>{dbf69038-fa48-4180-be5a-1739aa5f1110}</Project>
-      <Name>Grades</Name>
+    <ProjectReference Include="..\CustomCollections\CustomCollections.csproj">
+      <Project>{7956634f-6179-4bcd-b3bf-5104ac81a60f}</Project>
+      <Name>CustomCollections</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EqualityAndComparison\Foods.csproj">
+      <Project>{db98fffa-e7a5-44bd-a724-ccd356189b7b}</Project>
+      <Name>Foods</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utils\Utils.csproj">
+      <Project>{c23363b2-90bd-4fb5-a8a9-1c9b85a0f07b}</Project>
+      <Name>Utils</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

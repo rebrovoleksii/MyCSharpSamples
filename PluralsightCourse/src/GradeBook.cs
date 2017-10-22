@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 
 namespace PluralSight.Grade
 {
     public class GradeBook
     {
-        private List<float> grades;
+        protected List<float> grades;
         private string _name;
 
         public string Name
@@ -49,7 +47,15 @@ namespace PluralSight.Grade
             grades.Add(grade);
         }
 
-        public GradeBookStatistics CalculateStatitics()
+        public void WriteGrades(TextWriter writer)
+        {
+            for (int i = 0; i < grades.Count; i++)
+            {
+                writer.WriteLine(grades[i]);
+            }
+        }
+
+        public virtual GradeBookStatistics CalculateStatitics()
         {
             var stat = new GradeBookStatistics();
             stat.LowestGrade = float.MaxValue;
@@ -67,6 +73,20 @@ namespace PluralSight.Grade
             stat.AverageGrade = sum / grades.Count;
 
             return stat;
+        }
+
+        /// <summary>
+        /// Virtual methods could be overriden
+        /// </summary>
+        /// <returns></returns>
+        public virtual String GetClassNameVirtual()
+        {
+            return "GradeBook";
+        }
+
+        public String GetClassName()
+        {
+            return "GradeBook";
         }
     }
 }

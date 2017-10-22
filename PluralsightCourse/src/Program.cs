@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace PluralSight.Grade
 {
@@ -10,12 +11,21 @@ namespace PluralSight.Grade
     {
         static void Main(string[] args)
         {
-            var book = new GradeBook("Pluralsight book");
+            GradeBook book = new ThrowAwayGradeBook();
             book.OnNameChanged += new NameChagedDelegate(OnNameChanges);
-
             book.OnNameChanged += new NameChagedDelegate(OnNameChanges);
 
             book.Name = "Alex's Gradebook";
+
+            book.AddGrade(90);
+            book.AddGrade(10.5f);
+
+            using (StreamWriter file = File.CreateText("grades.txt"))
+            {
+                book.WriteGrades(file);
+            }
+            Console.WriteLine("Regular method called by variable type : {0}",book.GetClassName());
+            Console.WriteLine("Virtual method called by instance type : {0}",book.GetClassNameVirtual());
             Console.ReadLine();
         }
 
