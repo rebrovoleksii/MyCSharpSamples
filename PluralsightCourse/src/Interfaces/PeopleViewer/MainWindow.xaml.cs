@@ -1,17 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using System.Windows;
 using PeopleLibrary;
 
 namespace PeopleViewer
@@ -21,20 +8,22 @@ namespace PeopleViewer
     /// </summary>
     public partial class MainWindow : Window
     {
-        private PeopleLibrary.PeopleRepository repository;
+        private PeopleLibrary.SimplePeopleRepository concreteRepository;
 
         public MainWindow()
         {
             InitializeComponent();
-            repository = new PeopleRepository();
+            concreteRepository = new SimplePeopleRepository();
         }
+
+        #region Form Action Handers
 
         private void GetPeopleConcrete_OnClick(object sender, RoutedEventArgs e)
         {
             ClearPeopleList();
 
             string[] peopleList;
-            peopleList = repository.GetPeopleList();
+            peopleList = concreteRepository.GetPeopleArray();
             // this brakes
             //peopleList = repository.GetPeopleListNew();
             foreach (var person in peopleList)
@@ -43,23 +32,34 @@ namespace PeopleViewer
             }
         }
 
-        private void GetPeopleInterface_OnClick(object sender, RoutedEventArgs e)
+        private void GetPeopleSimpleRepo_OnClick(object sender, RoutedEventArgs e)
         {
             ClearPeopleList();
-
             //coding to interface
-            IEnumerable<string> peopleList;
-            peopleList = repository.GetPeopleList();
-            peopleList = repository.GetPeopleListNew();
-            foreach (var person in peopleList)
-            {
-                this.PeopleList.Items.Add("I " + person);
-            }
+            GetPeopleFromRepo(RepositoryType.SimpleRepo);
+        }
+
+        private void GetPeopleWcfRepo_OnClick(object sender, RoutedEventArgs e)
+        {
+            ClearPeopleList();
+            GetPeopleFromRepo(RepositoryType.WcfRepo);
         }
 
         private void ClearList_OnClick(object sender, RoutedEventArgs e)
         {
             ClearPeopleList();
+        }
+
+        #endregion
+
+        private void GetPeopleFromRepo(RepositoryType type)
+        {
+            var repo = PeopleRepositoryFactory.GetPeopleRepository(type);
+
+            foreach (var person in repo.GetPeopleList())
+            {
+                this.PeopleList.Items.Add(person);
+            }
         }
 
         private void ClearPeopleList()

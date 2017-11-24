@@ -6,11 +6,16 @@ using System.Threading.Tasks;
 
 namespace PeopleLibrary
 {
-    public class PeopleRepository
+    public class SimplePeopleRepository : IPeopleRepository
     {
-        public string [] GetPeopleList()
+        public IEnumerable<string> GetPeopleList()
         {
             return new string[3] { "John Dow","Jane Dow", "Jogh Galt"};
+        }
+
+        public string [] GetPeopleArray()
+        {
+            return new string[3] { "John Dow", "Jane Dow", "Jogh Galt" };
         }
 
         public List<string> GetPeopleListNew()

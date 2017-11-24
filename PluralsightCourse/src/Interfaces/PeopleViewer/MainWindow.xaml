@@ -8,11 +8,11 @@
         Title="MainWindow" Height="350" Width="525">
     <Grid>
         <Button Margin="0,10,354,256" Click="GetPeopleConcrete_OnClick">Concrete Class</Button>
-        <Button Margin="0,68,354,198" Click="GetPeopleInterface_OnClick">Interface</Button>
+        <Button Margin="0,68,354,198" Click="GetPeopleSimpleRepo_OnClick" Content="People : Simple Repo"/>
+        <Button Margin="0,126,354,140" Click="GetPeopleWcfRepo_OnClick" Content="People : WCF Repo"/>
         
-        <Button Margin="0,197,354,69" Click="ClearList_OnClick">Clear List</Button>
-
+        <Button Margin="0,256,354,10" Click="ClearList_OnClick">Clear List</Button>
+        
         <ListView Margin="168,10,0,0" Name="PeopleList"></ListView>
-        
     </Grid>
 </Window>
