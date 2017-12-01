@@ -1,5 +1,8 @@
-﻿using System.Windows;
-using PeopleLibrary;
+﻿using System.Configuration;
+using System.Windows;
+using People.Library;
+using People.Core;
+
 
 namespace PeopleViewer
 {
@@ -8,7 +11,7 @@ namespace PeopleViewer
     /// </summary>
     public partial class MainWindow : Window
     {
-        private PeopleLibrary.SimplePeopleRepository concreteRepository;
+        private SimplePeopleRepository concreteRepository;
 
         public MainWindow()
         {
@@ -62,9 +65,26 @@ namespace PeopleViewer
             }
         }
 
+        private void GetPeopleFromDynamicallyLoadedRepo()
+        {
+            var typeFromConfig = ConfigurationManager.AppSettings["RepositoryType"];
+            var repo = PeopleRepositoryFactory.GetPeopleRepositoryDynamically(typeFromConfig);
+
+            foreach (var person in repo.GetPeopleList())
+            {
+                this.PeopleList.Items.Add(person);
+            }
+
+        }
+
         private void ClearPeopleList()
         {
             this.PeopleList.Items.Clear();
+        }
+
+        private void GetPeopleCsvDynamicRepo_OnClick(object sender, RoutedEventArgs e)
+        {
+            GetPeopleFromDynamicallyLoadedRepo();
         }
     }
 }

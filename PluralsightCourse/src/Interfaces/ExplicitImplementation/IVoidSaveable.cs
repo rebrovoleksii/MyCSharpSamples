@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PeopleLibrary
+namespace ExplicitImplementation
 {
-    public interface IPeopleRepository
+    interface IVoidSaveable
     {
-        IEnumerable<string> GetPeopleList();
+        void Save();
     }
 }

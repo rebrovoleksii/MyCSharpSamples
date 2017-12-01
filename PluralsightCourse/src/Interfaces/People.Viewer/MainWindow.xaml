@@ -14,5 +14,6 @@
         <Button Margin="0,256,354,10" Click="ClearList_OnClick">Clear List</Button>
         
         <ListView Margin="168,10,0,0" Name="PeopleList"></ListView>
+        <Button Margin="0,184,354,82" Click="GetPeopleCsvDynamicRepo_OnClick" Content="People : CSV Dynamic Repo"/>
     </Grid>
 </Window>

@@ -1,12 +1,14 @@
 ﻿using System.Collections.Generic;
+using People.Core;
+using People.Library.WcfServiceClient;
 
-namespace PeopleLibrary
+namespace People.Library
 {
     public class WcfPeopleRepository : IPeopleRepository
     {
         public IEnumerable<string> GetPeopleList()
         {
-            var proxy = new People.WcfService.PeopleServiceClient("PeopleServiceEndPoint");
+            var proxy = new PeopleServiceClient("PeopleServiceEndPoint");
             return proxy.GetPeople();
         }
     }

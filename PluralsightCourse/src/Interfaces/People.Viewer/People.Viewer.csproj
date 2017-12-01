@@ -7,8 +7,8 @@
     <ProjectGuid>{1CA4C857-EFF8-4492-92D2-65DEB2A39F81}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PeopleViewer</RootNamespace>
-    <AssemblyName>PeopleViewer</AssemblyName>
+    <RootNamespace>People.Viewer</RootNamespace>
+    <AssemblyName>People.Viewer</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -35,6 +35,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -85,6 +86,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="People.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -95,9 +99,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PeopleLibrary\PeopleLibrary.csproj">
+    <ProjectReference Include="..\People.Core\People.Core.csproj">
+      <Project>{2dc83468-f8c4-4c25-a11a-ab2f231dcc97}</Project>
+      <Name>People.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\People.Library\People.Library.csproj">
       <Project>{c1e10891-a28a-49ca-97bb-824792898aa8}</Project>
-      <Name>PeopleLibrary</Name>
+      <Name>People.Library</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

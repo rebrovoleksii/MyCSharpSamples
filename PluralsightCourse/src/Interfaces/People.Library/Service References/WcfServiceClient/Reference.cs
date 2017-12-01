@@ -8,11 +8,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PeopleLibrary.People.WcfService {
+namespace People.Library.WcfServiceClient {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="People.WcfService.IPeopleService")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WcfServiceClient.IPeopleService")]
     public interface IPeopleService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPeopleService/GetPeople", ReplyAction="http://tempuri.org/IPeopleService/GetPeopleResponse")]
@@ -23,12 +23,12 @@ namespace PeopleLibrary.People.WcfService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IPeopleServiceChannel : PeopleLibrary.People.WcfService.IPeopleService, System.ServiceModel.IClientChannel {
+    public interface IPeopleServiceChannel : People.Library.WcfServiceClient.IPeopleService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class PeopleServiceClient : System.ServiceModel.ClientBase<PeopleLibrary.People.WcfService.IPeopleService>, PeopleLibrary.People.WcfService.IPeopleService {
+    public partial class PeopleServiceClient : System.ServiceModel.ClientBase<People.Library.WcfServiceClient.IPeopleService>, People.Library.WcfServiceClient.IPeopleService {
         
         public PeopleServiceClient() {
         }

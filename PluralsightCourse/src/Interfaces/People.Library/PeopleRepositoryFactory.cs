@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Diagnostics.Eventing.Reader;
+using People.Core;
 
-namespace PeopleLibrary
+namespace People.Library
 {
     public static class PeopleRepositoryFactory
     {
@@ -18,7 +16,17 @@ namespace PeopleLibrary
                     return new WcfPeopleRepository();
                 default:
                     return null;
-            }    
+            }
+        }
+
+        public static IPeopleRepository GetPeopleRepositoryDynamically(string repositoryTypeFullName)
+        {
+            var type = Type.GetType(repositoryTypeFullName);
+
+            if (type != null)
+                return (IPeopleRepository) Activator.CreateInstance(type);
+
+            return null;
         }
     }
 }
