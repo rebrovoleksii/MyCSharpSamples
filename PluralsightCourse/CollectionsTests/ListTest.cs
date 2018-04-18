@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 //using System.Linq;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -101,6 +102,75 @@ namespace PluralSight.Tests.Collections
             var customHetmans = new NonBlankStringList(listOfHetmans);
             customHetmans[1] = "Baida Vyshneveckiy";
             customHetmans[2] = null;
+        }
+
+        [TestMethod]
+        public void Test()
+        {
+            IEnumerable<int> enumerable = new List<int>();
+            ICollection<int> collection = new IntList();
+            IList<int> list = new IntList();
+        }
+
+        class IntList : IList<int>
+        {
+            public IEnumerator<int> GetEnumerator()
+            {
+                throw new NotImplementedException();
+            }
+
+            IEnumerator IEnumerable.GetEnumerator()
+            {
+                return GetEnumerator();
+            }
+
+            public void Add(int item)
+            {
+                throw new NotImplementedException();
+            }
+
+            public void Clear()
+            {
+                throw new NotImplementedException();
+            }
+
+            public bool Contains(int item)
+            {
+                throw new NotImplementedException();
+            }
+
+            public void CopyTo(int[] array, int arrayIndex)
+            {
+                throw new NotImplementedException();
+            }
+
+            public bool Remove(int item)
+            {
+                throw new NotImplementedException();
+            }
+
+            public int Count { get; }
+            public bool IsReadOnly { get; }
+            public int IndexOf(int item)
+            {
+                throw new NotImplementedException();
+            }
+
+            public void Insert(int index, int item)
+            {
+                throw new NotImplementedException();
+            }
+
+            public void RemoveAt(int index)
+            {
+                throw new NotImplementedException();
+            }
+
+            public int this[int index]
+            {
+                get { throw new NotImplementedException(); }
+                set { throw new NotImplementedException(); }
+            }
         }
     }
 }
